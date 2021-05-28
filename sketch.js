@@ -61,7 +61,7 @@ function setup()
 	road = createSprite(0, 0, 600, 1280);
 	road.addImage(backgr);
 	road.velocityY = 1;
-	road.scale = 0.5;
+	road.scale = 0.05;
 
 	playerI = createSprite(290, 1030, 50, 50);
 	playerI.addAnimation("cycling", cr1i);
