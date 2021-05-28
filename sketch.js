@@ -65,7 +65,7 @@ function setup()
 
 	playerI = createSprite(290, 1030, 50, 50);
 	playerI.addAnimation("cycling", cr1i);
-	playerI.scale = 0.1;
+	playerI.scale = 1;
 
 
 	Engine.run(engine);
