@@ -53,7 +53,7 @@ function preload()
 
 function setup()
 {
-	createCanvas(600, 1300);
+	createCanvas(1500, 1500);
 
 	engine = Engine.create();
 	world = engine.world;
@@ -64,7 +64,7 @@ function setup()
 
 	playerI = createSprite(290, 1030, 50, 50);
 	playerI.addAnimation("cycling", cr1i);
-	
+	playerI.scale = 0.1;
 
 
 	Engine.run(engine);
@@ -82,10 +82,10 @@ function draw()
   if(gameState === PLAY)
   {
 
-	if(backgr.y > 1230)
+	if(road.y > 1230)
     {
 
-     backgr.y = 1030;
+     road.y = 1030;
 	 
     }
 
