@@ -14,32 +14,35 @@ var trafficConeImg, trafficCone;
 var manholeImg, manhole;
 var cr1i, cr1ii, cr2i, cr2ii, cr3i, cr3ii, playerI, playerII;
 var token, coin;
+var gameOverScreen, gameOverScreen;
 var backgr, road;
 
 function preload()
 {
 
-	backgr = loadImage("assets/Road.png");
+	backgr = loadImage("Road.png");
 
-	boulderImg1 = loadImage("assets/boulder-1.png");
-	boulderImg2 = loadImage("assets/boulder-2.jpg");
+	boulderImg1 = loadImage("boulder-1.png");
+	boulderImg2 = loadImage("boulder-2.jpg");
 
-	trafficConeImg = loadImage("assets/obstacle1.png");
-	manholeImg = loadImage("assets/obstacle2.png");
+	trafficConeImg = loadImage("obstacle1.png");
+	manholeImg = loadImage("obstacle2.png");
 
-	treeImg1 = loadImage("assets/cartoon-tree-1.png");
-	treeImg2 = loadImage("assets/cartoon-tree-2.png");
+	treeImg1 = loadImage("cartoon-tree-1.png");
+	treeImg2 = loadImage("cartoon-tree-2.png");
 
-	cr1i = loadAnimation("assets/mainPlayer1.png", "assets/mainPlayer2.png");
-	cr1ii = loadImage("assets/mainPlayer3.png");
+	cr1i = loadAnimation("mainPlayer1.png", "mainPlayer2.png");
+	cr1ii = loadImage("mainPlayer3.png");
 
-	cr2i = loadAnimation("assets/opponent4.png", "assets/opponent5.png");
-	cr2ii = loadImage("assets/opponent6.png");
+	cr2i = loadAnimation("opponent4.png", "opponent5.png");
+	cr2ii = loadImage("opponent6.png");
 	
-	cr3i = loadAnimation("assets/opponent7.png", "assets/opponent8.png");
-	cr3ii = loadImage("assets/opponent9.png");
+	cr3i = loadAnimation("opponent7.png", "opponent8.png");
+	cr3ii = loadImage("opponent9.png");
+	
+	gameOverScreen = loadImage("gameOver.png");
 
-	token = loadImage("assets/Gold-Coin-PNG.png");
+	token = loadImage("Gold-Coin-PNG.png");
 
 	pointGroup = new Group();
 	opponentGroup = new Group();
@@ -111,7 +114,7 @@ function draw()
 	if(obstacleGroup.isTouching(playerI)||opponentGroup.isTouching(playerI)||treeGroup.isTouching(playerI))
     {
 
-      gameState = END;
+          gameState = END;
 	  road.velocityY = 0;
 	  playerI.changeAnimation(playerII);
 
@@ -123,7 +126,8 @@ function draw()
 
 	road.velocityY = 0;
 	playerI.changeAnimation(playerII);
-
+	gameOver.addImage(gameOverScreen);
+	cr2i.changeAnimation(cr2ii);
 
   }
 
