@@ -125,9 +125,11 @@ function draw()
   {
 
 	road.velocityY = 0;
+	player.x = 300;
 	playerI.changeAnimation(playerII);
 	gameOver.addImage(gameOverScreen);
 	cr2i.changeAnimation(cr2ii);
+	
 
   }
 
@@ -155,7 +157,7 @@ function spawnOpponents()
 	   else
 	  {
 	   opponent.addAnimation("cycling", cr3i);
-	   opponent.addImage("cycling", cr3ii);
+	   opponent.addImage(cr3ii);
 	  } 
 	  
 	  opponent.x = Math.round(random(200, 400));
@@ -205,7 +207,7 @@ function spawnObstacles()
 	   else
 	  {
 	   opponent.addAnimation("cycling", cr3i);
-	   opponent.addImage("cycling", cr3ii);
+	   opponent.addImage(cr3ii);
 	  } 
 	  
 	  opponent.x = Math.round(random(200, 400));
