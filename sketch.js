@@ -58,7 +58,7 @@ function setup()
 	engine = Engine.create();
 	world = engine.world;
 
-	road = createSprite(0, 0, 600, 1280);
+	road = createSprite(0, 0, 1280, 600);
 	road.addImage(backgr);
 	road.velocityY = 1;
 	road.scale = 0.10;
